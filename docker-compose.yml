@@ -14,8 +14,8 @@ services:
       - PORT=8080
       - SMTP_HOST=smtp.gmail.com
       - SMTP_PORT=465
-      - SMTP_USERNAME=ufra.mail.test@gmail.com
-      - SMTP_PASSWORD=t3$t3m@1l
+      - SMTP_USERNAME=""
+      - SMTP_PASSWORD=""
       - MAIL_NOTIFICATION=""
     ports:
       - "8080:8080"
