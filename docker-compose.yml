@@ -1,0 +1,39 @@
+services:
+  app:
+    build: .
+    container_name: gestao_atividade
+    depends_on:
+      db:
+        condition: service_healthy
+    environment:
+      - DATASOURCE_URL=jdbc:postgresql://db:5432/gestao_atividades_production
+      - DATASOURCE_USERNAME=postgres
+      - DATASOURCE_PASSWORD=postgres
+      - DATASOURCE_DBCREATE=update
+      - BASEDIR=""
+      - PORT=8080
+      - SMTP_HOST=smtp.gmail.com
+      - SMTP_PORT=465
+      - SMTP_USERNAME=""
+      - SMTP_PASSWORD=""
+      - MAIL_NOTIFICATION=""
+    ports:
+      - "8080:8080"
+  db:
+    image: postgres:15
+    container_name: datasource_gestao_atividade
+    environment:
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_DB: gestao_atividades_production
+    ports:
+      - "5435:5432"
+    volumes:
+      - ./databases:/postgresql
+      - ./backups:/gestao_atividades_db_backup
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U postgres" ]
+      interval: 10s
+      retries: 5
+      start_period: 10s
+    restart: unless-stopped
