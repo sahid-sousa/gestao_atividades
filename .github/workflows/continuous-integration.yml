@@ -1,4 +1,4 @@
-name: CI for Grails 3.3.5 App
+name: Continuous Integration for Grails 3.x
 
 on:
   push:
