@@ -1,3 +1,8 @@
+![Java 8](https://img.shields.io/badge/Java-8-blue?logo=java&logoColor=white)
+![Gradle](https://img.shields.io/badge/Gradle-3.x-02303A?logo=gradle&logoColor=white)
+![Grails 3](https://img.shields.io/badge/Grails-3.x-6DB33F?logo=grails&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791?logo=postgresql&logoColor=white)
+
 # Academic Document Manager
 Sistema para documentação e validação de atividades complementares
 
