@@ -1,7 +1,8 @@
 services:
-  app:
+  gestao-atividade:
     build: .
-    container_name: gestao_atividade
+    image: gestao-atividade
+    container_name: gestao-atividade
     depends_on:
       db:
         condition: service_healthy
