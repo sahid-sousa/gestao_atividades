@@ -24,9 +24,6 @@ jobs:
       - name: Ensure Gradle Wrapper Permissions
         run: chmod +x ./gradlew
 
-      # Grails 3 usa Gradle antigo, então é melhor **não usar** a action oficial de setup-gradle
-      # pois ela espera versões mais modernas
-
       - name: Build with Gradle 4.5 (Grails 3.3.5)
         run: ./gradlew clean assemble -x test --stacktrace --info
 
@@ -38,3 +35,10 @@ jobs:
 
       - name: Docker Compose Build
         run: docker compose build
+
+      - name: Push to Docker Hub Container Registry
+        run: |
+         docker tag gestao-atividade ${{ secrets.DOCKER_USERNAME }}/gestao-atividade:${{ github.run_id }}
+         docker tag gestao-atividade ${{ secrets.DOCKER_USERNAME }}/gestao-atividade:latest
+         docker push ${{ secrets.DOCKER_USERNAME }}/gestao-atividade:${{ github.run_id }}
+         docker push ${{ secrets.DOCKER_USERNAME }}/gestao-atividade:latest
