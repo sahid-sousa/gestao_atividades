@@ -2,6 +2,8 @@
 ![Gradle](https://img.shields.io/badge/Gradle-3.x-02303A?logo=gradle&logoColor=white)
 ![Grails 3](https://img.shields.io/badge/Grails-3.x-6DB33F?logo=grails&logoColor=white)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-Database-336791?logo=postgresql&logoColor=white)
+![Docker](https://img.shields.io/badge/Docker-Containerized-2496ED?logo=docker&logoColor=white)
+[![Continuous Integration for Grails 3.x](https://github.com/sahid-sousa/gestao_atividades/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/sahid-sousa/gestao_atividades/actions/workflows/continuous-integration.yml)
 
 # Academic Document Manager
 Sistema para documentação e validação de atividades complementares
